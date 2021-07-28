@@ -1,0 +1,12 @@
+
+.site{
+    border: black;
+    margin-left: auto;
+    margin-right: auto;
+    height: 6em;
+    width: 50em
+}
+
+.tudo{
+    background-color: darkgray;
+}
