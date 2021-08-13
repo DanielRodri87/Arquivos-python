@@ -1,0 +1,30 @@
+body{
+    background-image: url("https://www.twygoead.com/site/wp-content/uploads/2020/12/Conteudo-EAD.png");
+
+}
+.caixa{
+    height: 30em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30em
+}
+.caixa{
+    padding: 5%;
+    background-image: url("https://season-training.s3-sa-east-1.amazonaws.com/images/blog/blog-17.jpg");
+    border-color: solid black 3px;
+    border-radius: 10%;
+}
+.login{
+    margin-top: 50%;
+}
+button{
+    border-radius: 20%;
+    background-color: black;
+    margin-top: 2%;
+    border-color: black;
+}
+h2, p, .login, .senha, button{
+    color: white;
+
+
+}

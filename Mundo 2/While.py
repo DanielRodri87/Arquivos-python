@@ -32,14 +32,14 @@ while sexo != 'M':
     sexo = str(input('Digite o seu sexo: ')).upper()     Feito, apesar de funcionar só com 1 KKK
 print('Obrigado por participar')'''
 
-'''num = 1
+num = 1
 tentativas = 0
 print('pensando...')
-while num != 3:                                     <-- 058 funcionou que delicia
+while num != 3:                                     #<-- 058 funcionou que delicia
     num = int(input('Digite um número: '))
     tentativas = tentativas + 1
     print('Tentativas: {}'.format(tentativas))
-print('FIm')'''
+print('FIm')
 
  
  #                      <<- 59 já fiz''
