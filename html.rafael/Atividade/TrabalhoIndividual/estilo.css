@@ -1,0 +1,110 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    margin-bottom: 50px;
+    background-color: #00427C;
+    height: 150px;
+    padding: 35px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: white;
+}
+button, h1, #logo{
+    display: inline;
+}
+
+button{
+    background-color: #00427C;
+    color: white;
+    border: none;
+    margin-left: 100px;
+}
+
+#logo{
+    height: 100px;
+    width: 100px;
+}
+
+body{
+    background-image: url("https://www.lojawentz.com.br/media/catalog/product/cache/c687aa7517cf01e65c009f6943c2b1e9/f/u/fundo_1845__capa2.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.pagina{
+    margin-left: 70px;
+    display: inline;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.noticia1{
+    padding: 2px;
+    border-width: medium;
+    border-style: solid;
+    border-color: white;
+    border-radius: 5%;
+    text-align: center;
+    vertical-align:middle;
+    display:table-cell;
+    background-color: #00427C;
+    width: 300px;
+    height: 300px;
+    margin: 50px;
+}
+#pp, #pp2, #aluna, #imgCalor{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 210px;
+    height: 210px
+}
+
+.noticia2{
+    padding: 2px;
+    border-width: medium;
+    border-style: solid;
+    border-color: white;
+    margin-left: 200px;
+    border-radius: 5%;
+    text-align: center;
+    vertical-align:middle;
+    display:table-cell;
+    background-color: #00427C;
+    width: 300px;
+    height: 300px;
+}
+
+.noticia3{
+    padding: 5px;
+    border-width: medium;
+    border-style: solid;
+    border-color: white;
+    margin-left: 200px;
+    border-radius: 5%;
+    text-align: center;
+    vertical-align:middle;
+    display:table-cell;
+    background-color: #00427C;
+    width: 300px;
+    height: 300px;
+}
+.noticia4{
+    padding: 5px;
+    border-width: medium;
+    border-style: solid;
+    border-color: white;
+    margin-left: 200px;
+    border-radius: 5%;
+    text-align: center;
+    vertical-align:middle;
+    display:table-cell;
+    background-color: #00427C;
+    width: 300px;
+    height: 300px;
+}
+
