@@ -43,7 +43,7 @@ body{
     font-size: 14px;
 }
 
-.noticia1, .noticia2, .noticia3, .noticia4{
+.noticia1, .noticia2, .noticia3, .noticia4, .noticia5, .noticia6, .noticia7{
     padding: 2px;
     border-width: medium;
     border-style: solid;
@@ -58,7 +58,7 @@ body{
     margin: 50px;
 }
 
-#pp, #pp2, #aluna, #imgCalor{
+#pp, #pp2, #aluna, #imgCalor, #ferias, #aviao, #gasolina{
     margin-top: 5px;
     margin-bottom: 5px;
     width: 210px;
