@@ -1,4 +1,4 @@
-#Feita por JEan
+#Feita por Jean
 numeros = []
 
 numbers = input("Insira 3 números separadas por espaço: ").split()

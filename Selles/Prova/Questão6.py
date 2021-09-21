@@ -1,4 +1,4 @@
-#Feita por JEan
+#Feita por Jean
 
 nota1=float(input("Digite nota 1: "))
 nota2=float(input("Digite nota 2: "))
