@@ -2,7 +2,7 @@ agenda = {}
 qtd = int(input('Você deseja registrar quantos CPFs? '))
 
 for x in range(qtd):
-    print(f'{x+1} Pessoa')
+    print(f'{x+1}° Pessoa')
     cpf = int(input('Digite o seu CPF: '))
     nome = str(input('Digite o seu nome: '))
     idade = int(input('Digite sua idade: '))
