@@ -1,3 +1,5 @@
+#Feita por JEan
+
 num1 = int(input("Digite o nummero 1: "))
 num2 = int(input("Digite o nummero 2: "))
 
