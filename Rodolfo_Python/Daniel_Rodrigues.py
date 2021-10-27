@@ -14,7 +14,7 @@
 
 # altura = float(input("Digite a altura do retângulo m: "))
 # base = float(input("Digite a base do retângulo m: "))
-# print(f"O perímetro do retângulo é: {2*(base+altura)} m\nA área do retângulo é: {base*altura} m²", )
+# print(f"O perímetro do retângulo é: {2*(base+altura)} m\nA superfície do retângulo é de: {base*altura} m²", )
 
 
 
