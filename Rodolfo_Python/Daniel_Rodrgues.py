@@ -21,12 +21,12 @@
 # 3)
 # A proprietária de uma loja deseja obter o salário líquido (salário bruto deduzido dos impostos) de seus funcionários, com base no número de horas trabalhadas. O programa deve ser capaz de fazer esse cálculo a partir da quantidade de horas trabalhadas por uma pessoa, do valor (R$) da hora de trabalho e da porcentagem referente aos impostos. Ao final do cálculo, o programa deve informar os dois salários, bruto e líquido, com base nos dados de entrada.
 
-horas_trabalhadas = float(input("Digite o número de horas trabalhadas: "))
-valor_hora = float(input("Digite o valor da hora trabalhada: "))
-impostos = float(input('Digite a porcentagem de impostos (Apenas o número, sem o "%"): '))
+# horas_trabalhadas = float(input("Digite o número de horas trabalhadas: "))
+# valor_hora = float(input("Digite o valor da hora trabalhada: "))
+# impostos = float(input('Digite a porcentagem de impostos (Apenas o número, sem o "%"): '))
 
-salario_bruto = horas_trabalhadas * valor_hora
-salario_liquido = salario_bruto - (salario_bruto * impostos / 100)
+# salario_bruto = horas_trabalhadas * valor_hora
+# salario_liquido = salario_bruto - (salario_bruto * impostos / 100)
 
-print(f"O salário bruto é: {salario_bruto:.2f}")
-print(f"O salário líquido é: {salario_liquido:.2f}")
+# print(f"O salário bruto é: {salario_bruto:.2f}")
+# print(f"O salário líquido é: {salario_liquido:.2f}")
