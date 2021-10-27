@@ -5,7 +5,7 @@
 
 # raio = float(input("Digite o raio do círculo em m²: "))
 # altura = float(input("Digite a altura do círculo em m: "))
-# print(f"A área do círculo é: {3.14 * (raio * raio):.2} m²\nO voulme do círculo é: {3.14*(raio*raio)*altura:.3} m³ ", )
+# print(f"A área do círculo é: {3.14 * (raio * raio):.2} m²\nO volume do círculo é: {3.14*(raio*raio)*altura:.2} m³ ", )
 
 
 
