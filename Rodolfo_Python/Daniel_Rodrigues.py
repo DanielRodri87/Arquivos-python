@@ -96,3 +96,7 @@ while True:
         # Saída: hotmail
         email = input("Digite seu email: ")
         print("Seu provedor de email é:", email.split("@")[1].split(".")[0])
+
+    sair = input('Você deseja continuar? [S/N]\n-->')
+    if sair == "N":
+        break
