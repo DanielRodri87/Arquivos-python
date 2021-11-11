@@ -1,5 +1,6 @@
 
 class Pessoa:
+    ano_atual = 2021
     def __init__(self, nome, idade, comendo=False, falando=False):
         self.nome = nome
         self.idade = idade
