@@ -1,7 +1,7 @@
 
 class Pessoa:
     ano_atual = 2021
-    def __init__(self, nome, idade, comendo=False, falando=False):
+    def __init__(self, nome, idade, comendo=False, falando=False, espancar=False):
         self.nome = nome
         self.idade = idade
         self.comendo = comendo
@@ -41,6 +41,22 @@ class Pessoa:
             return
         print(f'{self.nome} ficará em silencio')
         self.falando = False
+
+    def espancar(self, vitima):
+        if self.espancar:
+            print(f'{self.nome} já está espancado')
+            return
+        else:
+            print(f'{self.nome} está espancando {vitima}')
+        self.espancar = True
+
+    def parar_de_espancar(self):
+        if not self.espancar:
+            print(f'{self.nome} não está espancando')
+            return
+        else:
+            print(f'{self.nome} parou de espancar')
+        self.espancar = False
 
     def ano_nascimento(self):
         return 2021 - self.idade
