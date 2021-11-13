@@ -48,7 +48,26 @@ while True:
             print("O financiamento foi aprovado!")
         else:
             print("O financiamento foi negado!")
-
+#########################################################################################33
+        class Financiamento:
+            def __init__(self, valor_casa, salario, anos):
+                self.valor_casa = valor_casa(int(input("Digite o valor da casa: ")))
+                self.salario = salario(int(input("Digite o seu salário: ")))
+                self.anos = anos(int(input("Digite a quantidade de anos para pagar: ")))
+                pass
+            def calcular_prestacao(self):
+                return self.valor_casa / (self.anos * 12)
+            def aprovado(self):
+                if self.calcular_prestacao() <= self.salario * 0.3:
+                    return True
+                else:
+                    return False
+        
+        f = Financiamento(valor_casa, salario, anos)
+        if f.aprovado():
+            print("O financiamento foi aprovado!")
+        else:
+            print("O financiamento foi negado!")
     if menu == 4:
         # Escreva um programa que calcule o preço a pagar pela energia elétrica de um imóvel. 
         # Pergunte a quantidade de kwh consumida e o tipo do imóvel: R
