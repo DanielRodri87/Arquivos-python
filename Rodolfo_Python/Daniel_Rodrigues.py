@@ -34,7 +34,7 @@ while True:
         os.system('cls')
         valor = 0
         idade = 0
-        
+
         while idade >= 0:  # Enquanto idade for maior que 0, o loop continua
             idade = int(input('Digite as idades: '))
             # Se idade for maior que 0, o contador é incrementado, e o valor é determinado pelas condicionais	
@@ -99,10 +99,10 @@ while True:
         print('\n')
         if escolha == 1:
             texto = input('Digite o texto para criptografar: ')
-            print(criptografar(texto),'\n')
+            print(f'O texto criptografado é: {criptografar(texto)},\n')
         elif escolha == 2:
             texto = input('Digite o texto descriptografar: ')
-            print(descriptografar(texto), '\n')
+            print(f'O texto descriptografado é: {descriptografar(texto)}, \n')
 
     else:
         print('Opção inválida!')
