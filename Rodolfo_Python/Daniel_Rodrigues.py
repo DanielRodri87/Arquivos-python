@@ -32,12 +32,10 @@ while True:
 
     elif menu == 2:
         os.system('cls')
-        # Contadores
         valor = 0
         idade = 0
-
-        # Enquanto idade for maior que 0, o loop continua
-        while idade >= 0:     
+        
+        while idade >= 0:  # Enquanto idade for maior que 0, o loop continua
             idade = int(input('Digite as idades: '))
             # Se idade for maior que 0, o contador é incrementado, e o valor é determinado pelas condicionais	
             if idade <= 2:
@@ -55,7 +53,6 @@ while True:
     elif menu == 3:
         os.system('cls')
 
-        # Listas com alfabeto minúsculo e maiúsculo
         alfabetolower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
         alfabetoupper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
         
@@ -67,6 +64,7 @@ while True:
             # For que percorre a lista de letras
             for letra in texto:
                 if letra in alfabetolower:
+
                     # A letra é encontrada na lista e substituida pela letra que vem três índices depois
                     posicao = alfabetolower.index(letra)
                     texto_criptografado += alfabetolower[(posicao + 3)%len(alfabetolower)]
@@ -79,7 +77,8 @@ while True:
                     texto_criptografado += letra
             return texto_criptografado
 
-        # Função que descriptografa a mensagem, os processos são os mesmos de criptografar, porém ao invés de adicionar 3 índices, subtrai 3 índices
+        # Função que descriptografa a mensagem, os processos são os mesmos de criptografar,
+        # porém ao invés de adicionar 3 índices, subtrai 3 índices
         def descriptografar(texto):
             texto_descriptografado = ''
             for letra in texto:
