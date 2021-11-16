@@ -99,10 +99,10 @@ while True:
         print('\n')
         if escolha == 1:
             texto = input('Digite o texto para criptografar: ')
-            print(f'O texto criptografado é: {criptografar(texto)},\n')
+            print(f'O texto criptografado é: {criptografar(texto)}\n')
         elif escolha == 2:
             texto = input('Digite o texto para descriptografar: ')
-            print(f'O texto descriptografado é: {descriptografar(texto)}, \n')
+            print(f'O texto descriptografado é: {descriptografar(texto)} \n')
 
     else:
         print('Opção inválida!')
