@@ -1,101 +1,111 @@
+##################################### ATIVIDADE 03 #####################################
+import os
 while True:
-    menu = int(input("Escolha um número para cada questão:\n[1] Banco\n[2] Calculadora\n[3] Financeamento\n[4] Conta de Energia\n[5] Nome do E-mail\n[6] Provedor do E-mal\n -> "))
+    os.system('cls')
+    print('\n')
+    menu = int(input('Digite o número do exercício que deseja executar:\n--> '))
 
     if menu == 1:
-        #  Um banco só empresta dinheiro para quem tem o salário maior que R$ 2000 e a idade maior que 18 anos.
-        #  Se um jovem de 22 anos ganhando R$ 3500 for pedir empréstimo, o banco aceitará ou não?
-        #  Expresse a resposta em um código.
+        os.system('cls')
 
-        idade = int(input("Digite a sua idade: "))
-        salario = float(input("Digite o seu salário: "))
-        if idade >= 18 and salario >= 2000:
-            print("O seu empréstimo foi aprovado!")
-        else:
-            print("O seu empréstimo foi negado!")
+        #Lista com as temperatudas
+        temp = [25, 37, 28, 42, 31, 39, 29]
+        soma = 0
+        for graus in range(len(temp)):
+            # Criando a função para calcular a soma de todos os itens da lista
+            soma += temp[graus]
+            if graus == 0:
+                # Aqui é atribuido o primeiro valor da lista ao maior e menor
+                menor = temp[0]
+                maior = temp[0]
+            else:
+                # Aqui é verificado se o valor atual é menor do que o anterior, e se for, atribui-se ao menor
+                if temp[graus] < menor:
+                    menor = temp[graus]
+                # Aqui é verificado se o valor atual é maior do que o anterior, e se for, atribui-se ao maior
+                if temp[graus] > maior:
+                    maior = temp[graus]
+                    
+        print(f'A menor temperatura é {menor} graus. \n')
+        print(f'A maior temperatura é {maior} graus. \n')
+        print(f'A média de temperatura é {soma/len(temp):.2f} \n')
 
-    if menu == 2:
-        # 2. Leia dois números e que pergunte qual operação o usuário deseja realizar:
-        #  soma, subtração, divisão e multiplicação. Exiba o resultado da operação solicitada.
+    elif menu == 2:
+        os.system('cls')
+        valor = 0
+        idade = 0
+
+        while idade >= 0:  # Enquanto idade for maior que 0, o loop continua
+            idade = int(input('Digite as idades: '))
+            # Se idade for maior que 0, o contador é incrementado, e o valor é determinado pelas condicionais	
+            if idade <= 2:
+                valor += 0
+            elif idade >= 3 and idade <= 12:
+                valor += 14
+            elif idade >= 65:
+                valor += 18
+            else:
+                valor += 23
+        # Saida do valor
+        print()
+        print(f'O valor total de passagens é: {valor:.2f}\n')
+
+    elif menu == 3:
+        os.system('cls')
+
+        alfabetolower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+        alfabetoupper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
         
-        saida = "S"
-        while saida == "S":
-            num1 = float(input("Digite o primeiro número: "))
-            num2 = float(input("Digite o segundo número: "))
-            operacao = input("Digite a operação que vai ser utilizada:\n[+] Soma\n[-] Subitração\n[*] Multiplicação\n[/] Divisão\n --> ")
-            if operacao == "+":
-                print("O resultado da soma é: ", num1 + num2)
-            elif operacao == "-":
-                print("O resultado da subtração é: ", num1 - num2)
-            elif operacao == "*":
-                print("O resultado da multiplicação é: ", num1 * num2)
-            elif operacao == "/":
-                print("O resultado da divisão é: ", num1 / num2)
-            else:
-                print("Operação inválida!")
-            saida = input("Deseja continuar? [S/N]\n--> ").upper()
-            
-    if menu == 3:
-        # Escreva um programa para analisar o financiamento bancário para compra de uma casa. 
-        # O programa deve perguntar o valor da casa a comprar, o salário e a quantidade de anos a pagar.
-        #  O valor da prestação mensal não pode ser superior a 30% do salário. 
-        # Calcule o valor da prestação como sendo o valor da casa a comprar dividido pelo número de meses a pagar. 
-        # De acordo com as informações inseridas, o programa deve dizer se o financiamento será aprovado ou não.
+        # Função que criptografa a mensagem
+        def criptografar(texto):
+            # O texto começa vazio, e será incrementado com o valor de cada letra da lista
+            texto_criptografado = ''
+
+            # For que percorre a lista de letras
+            for letra in texto:
+                if letra in alfabetolower:
+
+                    # A letra é encontrada na lista e substituida pela letra que vem três índices depois
+                    posicao = alfabetolower.index(letra)
+                    texto_criptografado += alfabetolower[(posicao + 3)%len(alfabetolower)]
+                elif letra in alfabetoupper:
+                    # Mesmo processo, porém com letras maiúsculas
+                    posicao = alfabetoupper.index(letra)
+                    texto_criptografado += alfabetoupper[(posicao + 3)%len(alfabetoupper)]
+                else:
+                    # Se não for nenhum dos dois, não é uma letra, e desse não será modificada.
+                    texto_criptografado += letra
+            return texto_criptografado
+
+        # Função que descriptografa a mensagem, os processos são os mesmos de criptografar,
+        # porém ao invés de adicionar 3 índices, subtrai 3 índices
+        def descriptografar(texto):
+            texto_descriptografado = ''
+            for letra in texto:
+                if letra in alfabetolower:
+                    posicao = alfabetolower.index(letra)
+                    texto_descriptografado += alfabetolower[(posicao - 3)%len(alfabetolower)]
+                
+                elif letra in alfabetoupper:
+                    posicao = alfabetoupper.index(letra)
+                    texto_descriptografado += alfabetoupper[(posicao - 3)%len(alfabetoupper)]
+                
+                else:
+                    texto_descriptografado += letra
+            return texto_descriptografado
+
+        # Entradas e saídas
+        escolha = int(input('Digite 1 para criptografar ou 2 para descriptografar: '))
+        print('\n')
+        if escolha == 1:
+            texto = input('Digite o texto para criptografar: ')
+            print(f'O texto criptografado é: {criptografar(texto)}\n')
+        elif escolha == 2:
+            texto = input('Digite o texto para descriptografar: ')
+            print(f'O texto descriptografado é: {descriptografar(texto)} \n')
+
+    else:
+        print('Opção inválida!')
         
-        valor_casa = float(input("Digite o valor da casa: "))
-        salario = float(input("Digite o seu salário: "))
-        anos = int(input("Digite a quantidade de anos para pagar: "))
-        if valor_casa / (anos * 12) <= salario * 0.3:
-            print("O financiamento foi aprovado!")
-        else:
-            print("O financiamento foi negado!")
-
-    if menu == 4:
-        # Escreva um programa que calcule o preço a pagar pela energia elétrica de um imóvel. 
-        # Pergunte a quantidade de kwh consumida e o tipo do imóvel: R
-        # para residências, I para indústrias e C para comércios. 
-        # Calcule o preço a pagar de acordo com as informações a seguir:
-
-        # Residencial - Até 500 kWh (R$ 0,4 por 1 kWH); Acima de 500 kWh (R$ 0,65 por 1 kWH).
-        # Comercial - Até 1000 kWh (R$ 0,55 por 1 kWH); Acima de 1000 kWh (R$ 0,6 por 1 kWH).
-        # Industrial - Até 5000 kWh (R$ 0,55 por 1 kWH); Acima de 5000 kWh (R$ 0,62 por 1 kWH).
-
-        kwh_usados = float(input("Digite a quantidade de kwh que foi utilizado: "))
-        tipo = input("Digite o tipo do imóvel: [R] Residencial, [I] Industrial ou [C] Comercial\n --> ").upper()
-        if tipo == "R":
-            if kwh_usados <= 500:
-                print("O valor a pagar é: R$", kwh_usados * 0.4)
-            else:
-                print("O valor a pagar é: R$", kwh_usados * 0.65)
-        elif tipo == "C":
-            if kwh_usados <= 1000:
-                print("O valor a pagar é: R$", kwh_usados * 0.55)
-            else:
-                print("O valor a pagar é: R$", kwh_usados * 0.6)
-        elif tipo == "I":
-            if kwh_usados <= 5000:
-                print("O valor a pagar é: R$", kwh_usados * 0.55)
-            else:
-                print("O valor a pagar é: R$", kwh_usados * 0.62)
-        else:
-            print("Tipo de imóvel inválido!")
-
-    if menu == 5:
-        #  Crie um programa em que o usuário digite o seu email e o programa informe apenas o seu nome de usuário. 
-        # Exemplo:
-        # Entrada: rodolfo@gmail.com
-        # Saída: rodolfo
-
-        email = input("Digite seu email: ")
-        print("Seu nome de usuário é:", email.split("@")[0])
-
-    if menu == 6:
-        # Crie um programa em que o usuário digite o seu email e o programa informe o seu provedor de email. 
-        # Exemplo:
-        # Entrada: rodolfo.paz@hotmail.com
-        # Saída: hotmail
-        email = input("Digite seu email: ")
-        print("Seu provedor de email é:", email.split("@")[1].split(".")[0])
-
-    sair = input('Você deseja continuar? [S/N]\n-->').upper()
-    if sair == "N":
+    if input('Deseja continuar? [S/N] ').upper() == 'N':
         break

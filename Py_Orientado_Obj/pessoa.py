@@ -1,11 +1,13 @@
 
 class Pessoa:
     ano_atual = 2021
-    def __init__(self, nome, idade, comendo=False, falando=False, espancar=False):
+    def __init__(self, nome, idade, comendo=False, falando=False, espancar=False, xingar=False):
         self.nome = nome
         self.idade = idade
         self.comendo = comendo
         self.falando = falando
+        self.espancando = espancar
+        self.xingando = xingar
     
     def comer(self, comida):
         if self.comendo:
@@ -43,20 +45,29 @@ class Pessoa:
         self.falando = False
 
     def espancar(self, vitima):
-        if self.espancar:
+        if self.espancando:
             print(f'{self.nome} já está espancado')
             return
         else:
             print(f'{self.nome} está espancando {vitima}')
-        self.espancar = True
+        self.espancando = True
 
     def parar_de_espancar(self):
-        if not self.espancar:
+        if not self.espancando:
             print(f'{self.nome} não está espancando')
             return
         else:
             print(f'{self.nome} parou de espancar')
-        self.espancar = False
+        self.espancando = False
+
+    def xingar(self, amigo):
+        if self.xingando:
+            print(f'{self.nome} já está xingando')
+            return
+        else:
+            print(f'{self.nome} avisou que é para {amigo} ir se fuder')
+        self.xingando = True
+
 
     def ano_nascimento(self):
         return 2021 - self.idade
