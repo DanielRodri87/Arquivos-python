@@ -41,14 +41,15 @@ while True:
         # Calcule o valor da prestação como sendo o valor da casa a comprar dividido pelo número de meses a pagar. 
         # De acordo com as informações inseridas, o programa deve dizer se o financiamento será aprovado ou não.
         
-        valor_casa = float(input("Digite o valor da casa: "))
-        salario = float(input("Digite o seu salário: "))
-        anos = int(input("Digite a quantidade de anos para pagar: "))
-        if valor_casa / (anos * 12) <= salario * 0.3:
-            print("O financiamento foi aprovado!")
-        else:
-            print("O financiamento foi negado!")
+        # valor_casa = float(input("Digite o valor da casa: "))
+        # salario = float(input("Digite o seu salário: "))
+        # anos = int(input("Digite a quantidade de anos para pagar: "))
+        # if valor_casa / (anos * 12) <= salario * 0.3:
+        #     print("O financiamento foi aprovado!")
+        # else:
+        #     print("O financiamento foi negado!")
 #########################################################################################33
+  
         class Financiamento:
             def __init__(self, valor_casa, salario, anos):
                 self.valor_casa = valor_casa(int(input("Digite o valor da casa: ")))
@@ -62,12 +63,11 @@ while True:
                     return True
                 else:
                     return False
-        
-        f = Financiamento(valor_casa, salario, anos)
-        if f.aprovado():
-            print("O financiamento foi aprovado!")
-        else:
-            print("O financiamento foi negado!")
+            def imprimir_resultado(self):
+                if self.aprovado():
+                    print("O financiamento foi aprovado!")
+                else:
+                    print("O financiamento foi negado!")
     if menu == 4:
         # Escreva um programa que calcule o preço a pagar pela energia elétrica de um imóvel. 
         # Pergunte a quantidade de kwh consumida e o tipo do imóvel: R
@@ -116,5 +116,23 @@ while True:
         print("Seu provedor de email é:", email.split("@")[1].split(".")[0])
 
     sair = input('Você deseja continuar? [S/N]\n-->').upper()
+
+    if menu == 7:
+        # Crie uma calculadora que não quebre ao entrar uma str
+
+        num1 = input("Digite o primeiro número: ")
+        num2 = input("Digite o segundo número: ")
+        operacao = input("Digite a operação: ")
+        if operacao == "+":
+            print("O resultado é:", float(num1) + float(num2))
+        elif operacao == "-":
+            print("O resultado é:", float(num1) - float(num2))
+        elif operacao == "*":
+            print("O resultado é:", float(num1) * float(num2))
+        elif operacao == "/":
+            print("O resultado é:", float(num1) / float(num2))
+
+
     if sair == "N":
         break
+
