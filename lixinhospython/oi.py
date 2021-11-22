@@ -1,5 +1,11 @@
-user = str(input("Digite oi: "))
-if user == "oi":
-    print('oi')
-else:
-    print("tchau")
+lista = []
+
+while True:
+    num = int(input('Digite um número: '))
+    if num != -1:
+        lista.append(num)
+    else:
+        break
+        
+print(lista)
+        
