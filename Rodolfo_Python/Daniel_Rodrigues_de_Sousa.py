@@ -114,6 +114,7 @@ while True:
         print()
 
         def criarBaralho(baralho):
+
             cartas = ['A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K']
             naipes = ['S', 'H', 'D', 'C']
             for x in cartas:
@@ -140,17 +141,21 @@ while True:
             return espadas, copas, ouros, paus
         
         def embaralhar(baralho): # Não encontrei outro método de embaralhar, sem usar funções do Python
+            # sem shuffle
             import random
             for i in range(len(baralho)):
-                random.shuffle(baralho)
+                x = random.randint(0, len(baralho))
+                baralho[i], baralho[x] = baralho[x], baralho[i]
             return baralho
-
         print()        
         print('='*75)
         print()
         
         baralho = []
         criarBaralho(baralho)
+        print('='*75)
+        print(f'Baralho completo: {baralho}')
+        print('='*75)
 
         espadas, copas, ouros, paus = separar(baralho)
         print(f'Baralho separado por naipes:\nEspadas: {espadas}\nCopas: {copas}\nOuros: {ouros}\nPaus: {paus}')
