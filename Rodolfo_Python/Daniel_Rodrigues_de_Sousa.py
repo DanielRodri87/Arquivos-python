@@ -39,12 +39,12 @@ while True:
         print(f'D) A soma dos valores é: {sum(lista)}')
         print(f'E) A média dos valores é: {sum(lista)/len(lista)}')
 
-        listaAcimaMedia = []
+        acima_media = 0
         for x in lista:
             if x > sum(lista)/len(lista):
-                listaAcimaMedia.append(x)
-        
-        print(f'F) A quantidade de valores acima da média é: {listaAcimaMedia}')
+                acima_media += 1
+
+        print(f'F) A quantidade de valores acima da média é: {acima_media}')
         print(f'G) Programa encerrado!')
 
     elif menu == 2:
@@ -140,12 +140,11 @@ while True:
                 
             return espadas, copas, ouros, paus
         
-        def embaralhar(baralho): # Não encontrei outro método de embaralhar, sem usar funções do Python
-            # sem shuffle
+        def embaralhar(baralho): 
             import random
             for i in range(len(baralho)):
                 x = random.randint(0, len(baralho))
-                baralho[i], baralho[x] = baralho[x], baralho[i]
+                baralho[i], baralho[x] = baralho[x], baralho[i] 
             return baralho
         print()        
         print('='*75)
