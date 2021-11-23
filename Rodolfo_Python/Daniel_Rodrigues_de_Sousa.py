@@ -34,7 +34,7 @@ while True:
         print(f'B) Os valores digitados foram: {lista}')
 
         for x in reversed(lista):
-            print(f'C) {x}', end='\n')
+            print(f'C) {x}', end='')
 
         print(f'D) A soma dos valores é: {sum(lista)}')
         print(f'E) A média dos valores é: {sum(lista)/len(lista)}')
@@ -114,7 +114,6 @@ while True:
         print()
 
         def criarBaralho(baralho):
-
             cartas = ['A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K']
             naipes = ['S', 'H', 'D', 'C']
             for x in cartas:
@@ -152,8 +151,6 @@ while True:
         
         baralho = []
         criarBaralho(baralho)
-        print('='*75)
-        print(f'Baralho completo: {baralho}')
         print('='*75)
 
         espadas, copas, ouros, paus = separar(baralho)
