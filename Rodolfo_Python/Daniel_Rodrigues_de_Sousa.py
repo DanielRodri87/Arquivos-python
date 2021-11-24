@@ -37,7 +37,7 @@ while True:
         print(f'B) Os valores digitados foram: {lista}')
 
         for x in reversed(lista):
-            print(f'C) {x}', end='')
+            print(f'C) {x}')
 
         print(f'D) A soma dos valores é: {sum(lista)}')
         print(f'E) A média dos valores é: {sum(lista)/len(lista)}')
@@ -148,6 +148,7 @@ while True:
                 x = random.randint(0, len(baralho))
                 baralho[i], baralho[x] = baralho[x], baralho[i] 
             return baralho
+            
         print()        
         print('='*75)
         print()
