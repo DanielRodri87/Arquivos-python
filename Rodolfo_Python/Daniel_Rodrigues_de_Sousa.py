@@ -20,9 +20,12 @@ while True:
         g. Encerre o programa com uma mensagem.
         Obs.: coloque as letras no resultado (print) para facilitar a correção.
         ''')
+
         print('='*75)
         print('\n')
+
         lista = []
+
         while True:
             valor = int(input("Digite um valor: "))
             if valor != -1:
