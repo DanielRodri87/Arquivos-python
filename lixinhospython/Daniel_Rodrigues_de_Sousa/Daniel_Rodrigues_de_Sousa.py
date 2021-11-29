@@ -88,7 +88,6 @@ while True:
             else:
                 print("Não foi possível encontrar a sua geladeira! ")       
 
-    os.system('cls')
     
     print('='*70)        
     menu = int(input("Escolha o número para a respectiva questão:\n[3] Questão 3\n[4] Questão 4\n[5] Questão 5\n--> "))
