@@ -62,7 +62,6 @@ while True:
             break
 
     def questao3():       
-        # Seja possível buscar por um objeto salvo no arquivos a partir de um dos seus atributos e exibi-lo. Escolha o atributo que desejar para isso.
         busca = input("Digite a marca da geladeira que você quer buscar: ")
         for i in listadegeladeiras:
             if i.marca == busca:
