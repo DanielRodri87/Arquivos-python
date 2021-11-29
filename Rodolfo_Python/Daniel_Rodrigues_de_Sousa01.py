@@ -146,7 +146,14 @@ while True:
         def embaralhar(baralho): 
             x = int(input('digite um número entre 0 à 51 para embaralhar:'))
             for i in range(len(baralho)):
-                baralho[i], baralho[x] = baralho[x], baralho[i] 
+                for i in range(len(baralho)):
+                    for i in range(len(baralho)):
+                        for i in range(len(baralho)):
+                            if 0 <= x >= 51: 
+                                baralho[i], baralho[x] = baralho[x], baralho[i] 
+                                x += 1
+                            else:
+                                x = 0
                 
             return baralho
             
