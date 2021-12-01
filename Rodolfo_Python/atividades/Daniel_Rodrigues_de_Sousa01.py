@@ -80,6 +80,7 @@ while True:
         ''')
         print('='*75)
         print()
+
         lista = []
         while True:
             palavra = input('Digite uma palavra: ')
@@ -143,10 +144,17 @@ while True:
             return espadas, copas, ouros, paus
         
         def embaralhar(baralho): 
-            import random
+            x = int(input('digite um número entre 0 à 51 para embaralhar:'))
             for i in range(len(baralho)):
-                x = random.randint(0, len(baralho))
-                baralho[i], baralho[x] = baralho[x], baralho[i] 
+                for i in range(len(baralho)):
+                    for i in range(len(baralho)):
+                        for i in range(len(baralho)):
+                            if 0 <= x >= 51: 
+                                baralho[i], baralho[x] = baralho[x], baralho[i] 
+                                x += 1
+                            else:
+                                x = 0
+                
             return baralho
             
         print()        

@@ -1,10 +1,7 @@
 while True:
     import os
 
-    itens = open('geladeiras.txt', 'r')
-    listadegeladeiras = list()
-    itens.writelines(listadegeladeiras)
-
+    listadegeladeiras = []
     buscas = []
 
     class Geladeira:
@@ -49,40 +46,62 @@ while True:
                 else:
                     print("A geladeira está fechada!")
 
-    def questao1():
+    # Questõeo 1 e 2 --> Fora de funções, porque para funcionar as demais funções necessito de uma lista com dados
+    while True:
         capacidade = int(input("Digite a capacidade da geladeira: "))
         marca = input("Digite a marca da geladeira: ")
         cor = input("Digite a cor da geladeira: ")
         g1 = Geladeira(capacidade, marca, cor)
-        print(f"A sua geladeira tem {g1.capacidade} litros de capacidade, a marca é: {g1.marca} e a cor é: {g1.cor}")
+        listadegeladeiras.append(g1)
+        print()
 
-    def questao2():
-        while True:
-            capacidade = int(input("Digite a capacidade da geladeira: "))
-            marca = input("Digite a marca da geladeira: ")
-            cor = input("Digite a cor da geladeira: ")
-            g1 = Geladeira(capacidade, marca, cor)
-            listadegeladeiras.append(g1)
-            continuar = input("Deseja cadastrar outra geladeira? [s/n]: ").lower()
-            print()
-            if continuar == 'n':
-                break
-        return listadegeladeiras
-       
+        # Questão 2
+        continuar = input("Deseja criar outra geladeira? (s/n) ")
+        print()
+        if continuar == 'n':
+            break
+
     def questao3():       
+        # Seja possível buscar por um objeto salvo no arquivos a partir de um dos seus atributos e exibi-lo. Escolha o atributo que desejar para isso.
         busca = input("Digite a marca da geladeira que você quer buscar: ")
         for i in listadegeladeiras:
             if i.marca == busca:
-                buscas.append(i)
-        if len(buscas) == 0:
-            print("Não foi encontrado nenhuma geladeira com essa marca!")
+                print(f"A sua geladeira tem {i.capacidade} litros de capacidade, a marca é: {i.marca} e a cor é: {i.cor}")
+                break
+        else:
+            print("Não foi possível encontrar a sua geladeira!")
 
-            
-    menu = int(input("Escolha o número para a respectiva questão:\n[1] Questão 1\n[2] Questão 2\n[3] Questão 3\n[4] Questão 4\n[5] Questão 5\n--> "))
-    if menu == 1:
-        questao1()
-    elif menu == 2:
-        questao2()
-    elif menu == 3:
+    def questao4():
+        for i in range(len(listadegeladeiras)):
+            print(f"A sua geladeira {i+1} tem {listadegeladeiras[i].capacidade} litros de capacidade, a marca é: {listadegeladeiras[i].marca} e a cor é: {listadegeladeiras[i].cor}")
+    
+    def questao5():
+        # alterar elemento da lista
+        alterar = input("Digite a marca da geladeira que você deseja modificar: ")
+        for i in listadegeladeiras:
+            if i.marca == alterar:
+                i.marca = input("Digite a nova marca da sua geladeira: ")
+                i.capacidade = int(input("Digite a nova capacidade da sua geladeira: "))
+                i.cor = input("Digite a nova cor da sua geladeira: ")
+                listadegeladeiras.append(i)
+                break
+            else:
+                print("Não foi possível encontrar a sua geladeira! ")       
+
+    
+    print('='*70)        
+    menu = int(input("Escolha o número para a respectiva questão:\n[3] Questão 3\n[4] Questão 4\n[5] Questão 5\n--> "))
+    print('='*70)
+    
+    if menu == 3:
         questao3()
-                
+    elif menu == 4:
+        questao4()
+    elif menu == 5:
+        questao5()
+    else:
+        print("Opção inválida!")
+
+    saida = input("Deseja sair do programa? (s/n) ").lower()
+    if saida == 's':
+        break
