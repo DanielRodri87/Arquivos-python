@@ -1,50 +1,50 @@
+class Geladeira: 
+    def __init__(self, capacidade, marca, cor, aberta=False):
+        self.capacidade = capacidade
+        self.marca = marca
+        self.cor = cor
+        self.alimentos = []
+        self.aberta = aberta
+    
+    def abrir(self):
+        if self.aberta == True:
+            print("A geladeira já está aberta!")
+        else:
+            self.aberta = True
+            print("Abrindo a geladeira... ")
+    
+    def fechar(self):
+        if self.aberta == False:
+            print("A geladeira já está fechada!")
+        else:
+            self.aberta = False
+            print("Fechando a geladeira... ")
+    
+    def guardar(self, alimento):
+        if self.aberta:
+            if self.capacidade > len(self.alimentos):
+                self.alimentos.append(alimento)
+                print("Guardando alimento na geladeira... ")
+            else:
+                print("Não foi possível adicionar, a geladeira está cheia!")
+        else:
+            print("A geladeira está fechada!")
+        
+    def retirar(self, alimento):
+        if self.aberta:
+            if alimento in self.alimentos:
+                self.alimentos.remove(alimento)
+                print("Retirando alimento da geladeira... ")
+            else:
+                print("Não foi possível retirar, o alimento não está na geladeira!")
+        else:
+            print("A geladeira está fechada!")
+
+listadegeladeiras = []
+buscas = []
+
 while True:
     import os
-
-    listadegeladeiras = []
-    buscas = []
-
-    class Geladeira:
-            def __init__(self, capacidade, marca, cor, aberta=False):
-                self.capacidade = capacidade
-                self.marca = marca
-                self.cor = cor
-                self.alimentos = []
-                self.aberta = aberta
-            
-            def abrir(self):
-                if self.aberta == True:
-                    print("A geladeira já está aberta!")
-                else:
-                    self.aberta = True
-                    print("Abrindo a geladeira... ")
-            
-            def fechar(self):
-                if self.aberta == False:
-                    print("A geladeira já está fechada!")
-                else:
-                    self.aberta = False
-                    print("Fechando a geladeira... ")
-            
-            def guardar(self, alimento):
-                if self.aberta:
-                    if self.capacidade > len(self.alimentos):
-                        self.alimentos.append(alimento)
-                        print("Guardando alimento na geladeira... ")
-                    else:
-                        print("Não foi possível adicionar, a geladeira está cheia!")
-                else:
-                    print("A geladeira está fechada!")
-                
-            def retirar(self, alimento):
-                if self.aberta:
-                    if alimento in self.alimentos:
-                        self.alimentos.remove(alimento)
-                        print("Retirando alimento da geladeira... ")
-                    else:
-                        print("Não foi possível retirar, o alimento não está na geladeira!")
-                else:
-                    print("A geladeira está fechada!")
 
     # Questõeo 1 e 2 --> Fora de funções, porque para funcionar as demais funções necessito de uma lista com dados
     while True:
