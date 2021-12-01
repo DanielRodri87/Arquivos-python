@@ -28,7 +28,7 @@ while True:
             
             def guardar(self, alimento):
                 if self.aberta:
-                    if self.capacidade > len(self.alimentos) + 1:
+                    if self.capacidade > len(self.alimentos):
                         self.alimentos.append(alimento)
                         print("Guardando alimento na geladeira... ")
                     else:
