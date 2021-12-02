@@ -1,13 +1,22 @@
-class TimesFutebol:
-    def __init__(self, nome, jogadores, tecnico):
-        self.nome = nome
-        self.jogadores = jogadores
-        self.tecnico = tecnico
+class Notebook:
+    def __init__(self, marca, modelo, tamanho):
+        self.marca = marca
+        self.modelo = modelo
+        self.tamanho = tamanho
+        self.ligado = False
+        self.__bateria = 100
 
-flamengo = TimesFutebol('Flamengo', 'Gabigol; Daniel; Filipe Luis; Jean', 'Ronaldo')
+    def ligar(self):
+        self.ligado = True
 
-jogadores = []
-jogadores.append(flamengo.jogadores)
+    def desligar(self):
+        self.ligado = False
 
-for x in jogadores:
-    print(x)
+    def bateria(self):
+        return self.__bateria
+
+    def carregar(self, quantidade):
+        self.__bateria += quantidade
+
+    def descarregar(self, quantidade):
+        self.__bateria -= quantidade

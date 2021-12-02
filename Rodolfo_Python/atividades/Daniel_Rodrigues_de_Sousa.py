@@ -1,107 +1,52 @@
-class Geladeira: 
-    def __init__(self, capacidade, marca, cor, aberta=False):
-        self.capacidade = capacidade
-        self.marca = marca
-        self.cor = cor
-        self.alimentos = []
-        self.aberta = aberta
-    
-    def abrir(self):
-        if self.aberta == True:
-            print("A geladeira já está aberta!")
-        else:
-            self.aberta = True
-            print("Abrindo a geladeira... ")
-    
-    def fechar(self):
-        if self.aberta == False:
-            print("A geladeira já está fechada!")
-        else:
-            self.aberta = False
-            print("Fechando a geladeira... ")
-    
-    def guardar(self, alimento):
-        if self.aberta:
-            if self.capacidade > len(self.alimentos):
-                self.alimentos.append(alimento)
-                print("Guardando alimento na geladeira... ")
-            else:
-                print("Não foi possível adicionar, a geladeira está cheia!")
-        else:
-            print("A geladeira está fechada!")
+# Possua uma classe para representar um item de sua escola. A classe deve possuir 3 atributos que caracterizam esse item ou ser. Classes proibidas: aluno, professor e livro.
+import random
+
+
+
+class controleCantina:
+    def __init__(self, user, senha, alimento, quantidadeMax, permicao = False):
+        self.user = user
+        self.senha = senha
+        self.alimento = alimento
+        self.quantidadeMax = quantidadeMax == 10 # O usuário só pode pedir até 10 alimentos durante o dia
+        self.permicao = permicao
         
-    def retirar(self, alimento):
-        if self.aberta:
-            if alimento in self.alimentos:
-                self.alimentos.remove(alimento)
-                print("Retirando alimento da geladeira... ")
-            else:
-                print("Não foi possível retirar, o alimento não está na geladeira!")
+
+    def cadastrarUser(self): # Cadastrar usuário
+        print('\n########### CADASTRO ###########\n')
+        self.logs = {}
+        self.user = input("Digite seu nome: ")
+        self.senha = input("Digite sua senha: ")
+        self.logs[self.user] = self.senha
+
+    def login(self):
+        print('\n########### LOGIN ###########\n')
+        self.user = input("Digite seu nome: ")
+        self.senha = input("Digite sua senha: ")
+        if self.user in self.logs and self.logs[self.user] == self.senha:
+            print("Login realizado com sucesso!")
+            self.permicao = True
         else:
-            print("A geladeira está fechada!")
+            print("Usuário ou senha inválidos!")
+            self.permicao = False
 
-listadegeladeiras = []
-buscas = []
-
-while True:
-    import os
-
-    # Questõeo 1 e 2 --> Fora de funções, porque para funcionar as demais funções necessito de uma lista com dados
-    while True:
-        capacidade = int(input("Digite a capacidade da geladeira: "))
-        marca = input("Digite a marca da geladeira: ")
-        cor = input("Digite a cor da geladeira: ")
-        g1 = Geladeira(capacidade, marca, cor)
-        listadegeladeiras.append(g1)
-        print()
-
-        # Questão 2
-        continuar = input("Deseja criar outra geladeira? (s/n) ")
-        print()
-        if continuar == 'n':
-            break
-
-    def questao3():       
-        busca = input("Digite a marca da geladeira que você quer buscar: ")
-        for i in listadegeladeiras:
-            if i.marca == busca:
-                print(f"A sua geladeira tem {i.capacidade} litros de capacidade, a marca é: {i.marca} e a cor é: {i.cor}")
-                break
-        else:
-            print("Não foi possível encontrar a sua geladeira!")
-
-    def questao4():
-        for i in range(len(listadegeladeiras)):
-            print(f"A sua geladeira {i+1} tem {listadegeladeiras[i].capacidade} litros de capacidade, a marca é: {listadegeladeiras[i].marca} e a cor é: {listadegeladeiras[i].cor}")
-    
-    def questao5():
-        # alterar elemento da lista
-        alterar = input("Digite a marca da geladeira que você deseja modificar: ")
-        for i in listadegeladeiras:
-            if i.marca == alterar:
-                i.marca = input("Digite a nova marca da sua geladeira: ")
-                i.capacidade = int(input("Digite a nova capacidade da sua geladeira: "))
-                i.cor = input("Digite a nova cor da sua geladeira: ")
-                listadegeladeiras.append(i)
-                break
+    def pedidoAlimento(self):
+        if self.permicao == True:
+            lanche = ['maçã', 'banana', 'pão', 'pizza', 'suco', 'refrigerante', 'água', 'café', 'chá', 'leite']
+            self.alimento = random.choice(lanche)
+            self.quantidadeMax = int(input(f"O lanche de hoje é {self.alimento} e você pode pedir até 10 unidades. Digite quantas unidades você deseja: "))
+            if self.quantidadeMax <= 10:
+                print("Pedido realizado com sucesso!")
             else:
-                print("Não foi possível encontrar a sua geladeira! ")       
+                print("Quantidade máxima de alimentos excedida!")
 
-    os.system('cls')
-    
-    print('='*70)        
-    menu = int(input("Escolha o número para a respectiva questão:\n[3] Questão 3\n[4] Questão 4\n[5] Questão 5\n--> "))
-    print('='*70)
-    
-    if menu == 3:
-        questao3()
-    elif menu == 4:
-        questao4()
-    elif menu == 5:
-        questao5()
-    else:
-        print("Opção inválida!")
+        else:
+            print("Você não tem permissão para realizar pedidos!")
 
-    saida = input("Deseja sair do programa? (s/n) ").lower()
-    if saida == 's':
-        break
+
+    def mostrarAlimento(self):
+        if self.permicao == True:
+            print(f"O lanche de hoje é {self.alimento} e você pode pediu {self.quantidadeMax} unidades.")
+        else:
+            print("Você não tem permissão para ver os alimentos!")
+ 
