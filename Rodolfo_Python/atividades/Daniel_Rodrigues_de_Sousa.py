@@ -1,143 +1,96 @@
-# Possua uma classe para representar um item de sua escola. A classe deve possuir 3 atributos que caracterizam esse item ou ser. Classes proibidas: aluno, professor e livro.
 import random
 
 class ControleCantina:
-    def __init__(self, nome, senha, alimento, quantidadeMax, permicao = False):
+    def __init__(self, nome, senha, alimento, quantidadeMax):
         self.nome = nome
         self.senha = senha
         self.alimento = alimento
         self.quantidadeMax = quantidadeMax == 10 # O usuário só pode pedir até 10 alimentos durante o dia
-        self.permicao = permicao
-        
-
-    def cadastrarUser(self): # Cadastrar usuário
-        print('\n########### CADASTRO ###########\n')
-        self.logs = {}
-        self.nome = input("Digite seu nome: ")
-        self.senha = input("Digite sua senha: ")
-        self.logs[self.nome] = self.senha
-
-    def login(self):
-        print('\n########### LOGIN ###########\n')
-        self.nome = input("Digite seu nome: ")
-        self.senha = input("Digite sua senha: ")
-        if self.nome in self.logs and self.logs[self.nome] == self.senha:
-            print("Login realizado com sucesso!")
-            self.permicao = True
-        else:
-            print("Usuário ou senha inválidos!")
-            self.permicao = False
-
-    def pedidoAlimento(self):
-        if self.permicao == True:
-            lanche = ['maçã', 'banana', 'pão', 'pizza', 'suco', 'refrigerante', 'água', 'café', 'chá', 'leite']
-            self.alimento = random.choice(lanche)
-            self.quantidadeMax = int(input(f"O lanche de hoje é {self.alimento} e você pode pedir até 10 unidades. Digite quantas unidades você deseja: "))
-            if self.quantidadeMax <= 10:
-                print("Pedido realizado com sucesso!")
-            else:
-                print("Quantidade máxima de alimentos excedida!")
-
-        else:
-            print("Você não tem permissão para realizar pedidos!")
-
-
-    def mostrarAlimento(self):
-        if self.permicao == True:
-            print(f"O lanche de hoje é {self.alimento} e você pode pediu {self.quantidadeMax} unidades.")
-        else:
-            print("Você não tem permissão para ver os alimentos! ")
-
 
 alunos = []
-logs = {}
 
-while True:
+# Criando os 3 alunos iniciais
+matriculado1 = ControleCantina('Daniel', '123', 'Pão', 10)
+matriculado2 = ControleCantina('Rodolfo', '321', 'Refrigerante', 10)
+matriculado3 = ControleCantina('Rafael', '456', 'Suco', 10)
+
+# Adicionando os alunos criados a lista
+alunos.append(matriculado1)
+alunos.append(matriculado2)
+alunos.append(matriculado3)
+
+
+while True: # Inicio do menu de escolhas
     print('\n########### MENU ###########\n')
-    print('1- Cadastrar usuário')
-    print('2- Login')
-    print('3- Pedir alimento')
-    print('4- Ver alimento')
-    print('5- Sair')
-
-
+    print('1 - Cadastrar 5 usuários ')
+    print('2 - Alterar atributo')
+    print('3 - Sair')
 
     opcao = int(input('Digite a opção desejada: '))
-    
-    if opcao == 1:
-        count = 0   
-        while count < 5:
-            a1 = ControleCantina('', '', '', 0, False)
-            a1.cadastrarUser()
-            alunos.append(a1)
-            count += 1
-        else:
-            del alunos[0]
-            saida = input('Deseja cadastrar mais usuários? [S/N]').upper()
-            while saida == 'S':
-                a2 = ControleCantina('', '', '', 0, False)
-                a2.cadastrarUser()
-                alunos.append(a2)
-                saida = input('Deseja cadastrar mais usuários? [S/N]').upper()
 
-    elif opcao == 2:
-        # logar a partir do nome
-        for i in alunos:
-            i.login()
-            if i.permicao == True:
-                print(f'\nBem vindo {i.nome}!\n')
-                break
-            else:
-                print('\nUsuário ou senha inválidos!\n')
-                break
-
-    elif opcao == 3:
-        for a in alunos:
-            a.pedidoAlimento()
-            if a.permicao == True:
-                break
-        else:
-            print("Nenhum usuário cadastrado!")
-
-    elif opcao == 4:
-        for a in alunos:
-            a.mostrarAlimento()
-            if a.permicao == True:
-                break
-        else:
-            print("Nenhum usuário cadastrado!")
-
-    elif opcao == 5:
-        break
-
-while True:
-    print('\n########### Modificar atributo ###########\n')
-    print('1- Alterar nome')    
-    print('2- Alterar senha')
-    print('4- Alterar quantidade máxima')
-    print('5- Sair')
-
-    opcao = int(input('Digite a opção desejada: '))
-    if opcao == 1:
-        for a in alunos:
-            a.nome = input('Digite o novo nome: ')
-            print(f'Nome alterado para {a.nome}!')
-            alunos.append(a)
+    if opcao == 1: # Opção 1 = Criando uma lista de usuários
+        count = 3   # Contador já começa com 3 pois já tem 3 alunos cadastrados
+        while count < 5: # Enquanto o contador for menor que 5, ou seja, enquanto não tiver 5 alunos cadastrados
+            nome = input('Digite o nome do usuário: ')
+            senha = input('Digite a senha do usuário: ')
+            print('\n###############################\n')
+            alimento = random.choice(['Pizza', 'Batata Frita', 'Refrigerante', 'Suco', 'Biscoito', ''])
+            quantidadeMax = 10
+            a1 = ControleCantina(nome, senha, '', quantidadeMax) # Criando um objeto do tipo ControleCantina
             
-    elif opcao == 2:
-        for a in alunos:
-            a.senha = input('Digite a nova senha: ')
-            print(f'Senha alterada para {a.senha}!')
-            alunos.append(a)
-    elif opcao == 3:
-        for a in alunos:
-            a.quantidadeMax = int(input('Digite a nova quantidade máxima: '))
-            print(f'Quantidade máxima alterada para {a.quantidadeMax}!')
-            alunos.append(a)
+            alunos.append(a1) # Adicionando o objeto a lista de alunos
+            count += 1
+        else: # Se não for menor que 5, então o contador é igual a 5, ou seja, já tem 5 alunos cadastrados.	
+            saida = input('Deseja cadastrar mais usuários? [S/N]').upper() # O usuário pode cadastrar mais usuários
+            while saida == 'S':
+                del alunos[0] # Deletando o primeiro usuário cadastrado
+                nome = input('Digite o nome do usuário: ')
+                senha = input('Digite a senha do usuário: ')
+                alimento = random.choice(['Pizza', 'Batata Frita', 'Refrigerante', 'Suco', 'Biscoito', 'Feijoada'])
+                quantidadeMax = 10
+                a2 = ControleCantina(nome, senha, '', quantidadeMax)
+                
+                alunos.append(a2)
+                count += 1
+    elif opcao == 2: # Caso a opção seja 2, o usuário pode alterar os atributos de um aluno
+        print('\n########### ALTERAR ATRIBUTO ###########\n')   #
+        print('1 - Alterar nome')                               #
+        print('2 - Alterar senha')                              # --> Novo menu de escolhas, mas dessa vez é para modifcar os atributos
+        print('3 - Alterar quantidade máxima')                  #
+        print('4 - Voltar ao menu')                             #
+        opcao = int(input('Digite a opção desejada: '))
 
-    elif opcao == 4:
+        if opcao == 1: # Alterando o nome do aluno
+            nome = input('Digite o nome do usuário: ') # O usuário digita o nome do aluno que deseja alterar
+            for i in alunos: # Percorrendo a lista de alunos
+                if i.nome == nome: # Se o nome do aluno for igual ao nome digitado pelo usuário
+                    i.nome = input('Digite o novo nome: ')  # O usuário digita o novo nome
+                    print('Alterado com sucesso!')
+            else:
+                print('Usuário não encontrado') # Se o nome digitado não for igual ao nome de algum aluno, o usuário é avisado
+
+        elif opcao == 2: # As ações se repetem, só que agora para a senha
+            nome = input('Digite o nome do usuário: ')
+            for i in alunos:
+                if i.nome == nome:
+                    i.senha = input('Digite a nova senha: ')
+                    print('Alterado com sucesso!')
+            else: 
+                print('Usuário não encontrado')
+                    
+        elif opcao == 3: # As ações se repetem, só que agora para a quantidade máxima
+            nome = input('Digite o nome do usuário: ')
+            for i in alunos:
+                if i.nome == nome:
+                    i.quantidadeMax = int(input('Digite a nova quantidade máxima: '))
+                    print('Alterado com sucesso!')
+            else:
+                print('Usuário não encontrado')
+
+    elif opcao == 3: # Saida do programa
         break
 
-# Eu sei que poderia ter feito algo melhor, que pelo menos rodasse, porém, devido ao tempo curto, proporcionado por outras provas, não pude fazer outra coisa, ou corrigir os bugs.
-# Essa última parte devido a um bug em cadeia, não tinha muito o que fazer, porque a lista alunos recebia o local da memória e os atributos juntos, bagunçando tudo. E como disse, essas semanas estão corridas!
-# Obrigado pela compreensão.
+    fim = input('Deseja sair? [S/N]').upper() # Saida final do programa
+    if fim == 'S':
+        break
+  
