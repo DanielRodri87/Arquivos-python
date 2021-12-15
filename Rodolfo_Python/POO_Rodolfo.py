@@ -1,22 +1,30 @@
-class Notebook:
-    def __init__(self, marca, modelo, tamanho):
-        self.marca = marca
-        self.modelo = modelo
-        self.tamanho = tamanho
-        self.ligado = False
-        self.__bateria = 100
+class Cachorro:
+    def __init__(self, nome, raca, idade):
+        self.nome = nome
+        self.raca = raca
+        self.idade = idade
 
-    def ligar(self):
-        self.ligado = True
+while True:
+    print('Canil')
 
-    def desligar(self):
-        self.ligado = False
+    print('1 - Cadastrar\n2- Apagar cachorro')
 
-    def bateria(self):
-        return self.__bateria
+    opcao = int(input('Digite a opção: '))
+    cachorros = []
+    if opcao == 1:
+        nome = input('Digite o nome do cachorro: ')
+        raca = input('Digite a raça do cachorro: ')
+        idade = int(input('Digite a idade do cachorro: '))
+        cachorro = Cachorro(nome, raca, idade)
+        # adiconar na lista os atributos
+        cachorros.append(cachorro)
 
-    def carregar(self, quantidade):
-        self.__bateria += quantidade
-
-    def descarregar(self, quantidade):
-        self.__bateria -= quantidade
+    elif opcao == 2:
+        nome = input('Digite o nome do cachorro: ')
+        for cachorro in cachorros:
+            if cachorro.nome == nome:
+                cachorros.remove(cachorro)
+                print('Cachorro removido')
+                break
+        else:
+            print('Cachorro não encontrado')
