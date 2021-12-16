@@ -1,4 +1,5 @@
 import PySimpleGUI as sg
+
 class Tela:
     def __init__(self):
         # Layout
