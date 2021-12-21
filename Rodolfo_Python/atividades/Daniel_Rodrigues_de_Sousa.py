@@ -29,7 +29,7 @@ while True: # Inicio do menu de escolhas
     opcao = int(input('Digite a opção desejada: '))
 
     if opcao == 1: # Opção 1 = Criando uma lista de usuários
-        count = 3   # Contador já começa com 3 pois já tem 3 alunos cadastrados
+        count = len(alunos)   # Contador já começa com 3 pois já tem 3 alunos cadastrados
         while count < 5: # Enquanto o contador for menor que 5, ou seja, enquanto não tiver 5 alunos cadastrados
             nome = input('Digite o nome do usuário: ')
             senha = input('Digite a senha do usuário: ')
@@ -49,7 +49,6 @@ while True: # Inicio do menu de escolhas
                 alimento = random.choice(['Pizza', 'Batata Frita', 'Refrigerante', 'Suco', 'Biscoito', 'Feijoada'])
                 quantidadeMax = 10
                 a2 = ControleCantina(nome, senha, '', quantidadeMax)
-                
                 alunos.append(a2)
                 count += 1
     elif opcao == 2: # Caso a opção seja 2, o usuário pode alterar os atributos de um aluno
@@ -66,6 +65,8 @@ while True: # Inicio do menu de escolhas
                 if i.nome == nome: # Se o nome do aluno for igual ao nome digitado pelo usuário
                     i.nome = input('Digite o novo nome: ')  # O usuário digita o novo nome
                     print('Alterado com sucesso!')
+                    input('Digite qualquer coisa para sair...')
+                    break
             else:
                 print('Usuário não encontrado') # Se o nome digitado não for igual ao nome de algum aluno, o usuário é avisado
 
@@ -75,6 +76,8 @@ while True: # Inicio do menu de escolhas
                 if i.nome == nome:
                     i.senha = input('Digite a nova senha: ')
                     print('Alterado com sucesso!')
+                    input('Digite qualquer coisa para sair...')
+                    break
             else: 
                 print('Usuário não encontrado')
                     
@@ -84,6 +87,8 @@ while True: # Inicio do menu de escolhas
                 if i.nome == nome:
                     i.quantidadeMax = int(input('Digite a nova quantidade máxima: '))
                     print('Alterado com sucesso!')
+                    input('Digite qualquer coisa para sair...')
+                    break
             else:
                 print('Usuário não encontrado')
 
