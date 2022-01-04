@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `arquivo_teste3`;
-USE `arquivo_teste3`;
+CREATE DATABASE IF NOT EXISTS `atividade`;
+USE `atividade`;
 
 CREATE TABLE games(
 id INT(7) KEY AUTO_INCREMENT,
@@ -28,6 +28,5 @@ INSERT INTO games (id, nome, data_lancamento, preco)
 VALUES
 (5, "Free Fire", "2017-08-23", 0.00);
 
--- Imprimir tabela
 SELECT * FROM games;
 
