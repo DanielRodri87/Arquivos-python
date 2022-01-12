@@ -22,14 +22,26 @@ VALUES
  
 INSERT INTO games (id, nome, data_lancamento, preco)
 VALUES
-(4, "Clash Of Clans", "2012-08-02", 0.00);
+(4, "Clash Of Clans", "2019-08-02", 0.00);
  
 INSERT INTO games (id, nome, data_lancamento, preco)
 VALUES
 (5, "Free Fire", "2017-08-23", 0.00);
 
-SELECT nome, data_lancamento FROM games;
+INSERT INTO games (id, nome, data_lancamento, preco)
+VALUES
+(6, "dANIEL", "2019-08-23", 0.00);
 
-SELECT nome, preco FROM games WHERE data_lancamento > '2019-09-10';
 
-SELECT id, nome, preco FROM games WHERE id = 1;
+
+
+-- AND E OR 
+SELECT id, nome FROM games WHERE preco > 0
+ OR data_lancamento > '2019-01-10';
+
+SELECT id, nome FROM games WHERE preco > 0
+ AND data_lancamento > '2019-01-10';
+
+-- comando is null
+SELECT id, nome FROM games WHERE preco IS NULL;
+
