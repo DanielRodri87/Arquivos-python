@@ -32,7 +32,9 @@ INSERT INTO games (id, nome, data_lancamento, preco)
 VALUES
 (6, "dANIEL", "2019-08-23", 0.00);
 
-
+INSERT INTO games (id, nome, data_lancamento, preco)
+VALUES
+(7, "deNIEL", "2019-08-23", 0.00);
 
 
 -- AND E OR 
@@ -45,3 +47,5 @@ SELECT id, nome FROM games WHERE preco > 0
 -- comando is null
 SELECT id, nome FROM games WHERE preco IS NULL;
 
+-- like
+SELECT id, nome FROM games WHERE nome NOT LIKE 'd%';
