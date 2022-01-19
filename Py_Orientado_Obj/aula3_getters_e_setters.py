@@ -8,12 +8,12 @@ class Produto:
         self.preco = self.preco - (self.preco * porcentagem / 100)
 
     #Getter Nome
-    @property
+    @property # A função @property é um decorator que permite acessar os atributos de uma classe como se fosse uma propriedade
     def nome(self):
         return self._nome
 
     #Setter Nome
-    @nome.setter
+    @nome.setter # A função @nome.setter é um decorator que permite alterar os atributos de uma classe como se fosse uma propriedade
     def nome(self, valor):
         self._nome = valor.title()
 
