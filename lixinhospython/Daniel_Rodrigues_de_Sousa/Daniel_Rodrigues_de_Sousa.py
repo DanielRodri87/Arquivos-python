@@ -1,107 +1,96 @@
-while True:
-    import os
+dic_livres = {"Unidade1":"Volt" ,"Unidade2":"Volt","Unidade3":"Nature","Unidade4":"Nature","Uniddae5":"Urban"}
+dic_alugadas = {}
 
-    listadegeladeiras = []
-    buscas = []
+class Bicicletas:
+    def __init__(self, locacao, identificador):
+        self.locacao = locacao
+        self.identificador = identificador
 
-    class Geladeira:
-            def __init__(self, capacidade, marca, cor, aberta=False):
-                self.capacidade = capacidade
-                self.marca = marca
-                self.cor = cor
-                self.alimentos = []
-                self.aberta = aberta
-            
-            def abrir(self):
-                if self.aberta == True:
-                    print("A geladeira já está aberta!")
-                else:
-                    self.aberta = True
-                    print("Abrindo a geladeira... ")
-            
-            def fechar(self):
-                if self.aberta == False:
-                    print("A geladeira já está fechada!")
-                else:
-                    self.aberta = False
-                    print("Fechando a geladeira... ")
-            
-            def guardar(self, alimento):
-                if self.aberta:
-                    if self.capacidade > len(self.alimentos) + 1:
-                        self.alimentos.append(alimento)
-                        print("Guardando alimento na geladeira... ")
-                    else:
-                        print("Não foi possível adicionar, a geladeira está cheia!")
-                else:
-                    print("A geladeira está fechada!")
-                
-            def retirar(self, alimento):
-                if self.aberta:
-                    if alimento in self.alimentos:
-                        self.alimentos.remove(alimento)
-                        print("Retirando alimento da geladeira... ")
-                    else:
-                        print("Não foi possível retirar, o alimento não está na geladeira!")
-                else:
-                    print("A geladeira está fechada!")
+    @property
+    def locacao(self):
+        return self._locacao
+    @locacao.setter
+    def locacao(self, locacao):
+        self._locacao = locacao
 
-    # Questõeo 1 e 2 --> Fora de funções, porque para funcionar as demais funções necessito de uma lista com dados
-    while True:
-        capacidade = int(input("Digite a capacidade da geladeira: "))
-        marca = input("Digite a marca da geladeira: ")
-        cor = input("Digite a cor da geladeira: ")
-        g1 = Geladeira(capacidade, marca, cor)
-        listadegeladeiras.append(g1)
-        print()
+    @property
+    def identificador(self):
+        return self._identificador
+    @locacao.setter
+    def identificador(self, identificador):
+        self.identificador = identificador
 
-        # Questão 2
-        continuar = input("Deseja criar outra geladeira? (s/n) ")
-        print()
-        if continuar == 'n':
-            break
-
-    def questao3():       
-        # Seja possível buscar por um objeto salvo no arquivos a partir de um dos seus atributos e exibi-lo. Escolha o atributo que desejar para isso.
-        busca = input("Digite a marca da geladeira que você quer buscar: ")
-        for i in listadegeladeiras:
-            if i.marca == busca:
-                print(f"A sua geladeira tem {i.capacidade} litros de capacidade, a marca é: {i.marca} e a cor é: {i.cor}")
-                break
-        else:
-            print("Não foi possível encontrar a sua geladeira!")
-
-    def questao4():
-        for i in range(len(listadegeladeiras)):
-            print(f"A sua geladeira {i+1} tem {listadegeladeiras[i].capacidade} litros de capacidade, a marca é: {listadegeladeiras[i].marca} e a cor é: {listadegeladeiras[i].cor}")
     
-    def questao5():
-        # alterar elemento da lista
-        alterar = input("Digite a marca da geladeira que você deseja modificar: ")
-        for i in listadegeladeiras:
-            if i.marca == alterar:
-                i.marca = input("Digite a nova marca da sua geladeira: ")
-                i.capacidade = int(input("Digite a nova capacidade da sua geladeira: "))
-                i.cor = input("Digite a nova cor da sua geladeira: ")
-                listadegeladeiras.append(i)
+while True:
+    print("============MENU============")
+    print("|1| Relação de bikes.")
+    print("|2| Alugar bicicletas.")
+    print("|3| Desalugar bicicleta.")
+    print("|0| Sair.")
+
+    opcao = int(input("Digite a opção: "))
+
+    if opcao == 0: 
+        break
+    
+    elif opcao == 1:
+        print("====== Relação de bicicletas ======")
+        print("\n")
+        print("Bikes disponíveis para aluguel: ")
+        for chave, valor in dic_livres.items():
+            print(chave,":", valor)
+        print("\n")    
+        print("Bikes alugadas: ")
+        for chave, valor in dic_alugadas.items():
+            print(chave,":",valor)
+            
+    elif opcao == 2:
+        print("=============Alugar BIKES=============")
+        identificador = str(input("Insira a unidade que deseja alugar: "))
+        if identificador in dic_livres.keys():
+            #bicicleta = Bicicletas(locacao, identificador) - Karielly, essa parte é muito importante e deu errado.
+            #nome_do_dicionário[chave] = valor (new value ad)
+            dic_alugadas[identificador] = dic_livres[identificador] 
+            del dic_livres[identificador]
+            print(f"A bicicleta{dic_alugadas[identificador]} alugada!")
+        else:
+            print("Essa bicicleta já foi alugada!")
+            
+    elif opcao == 3: 
+        for bicicleta in dic_alugadas:
+            print(
+                f"Tipo: {bicicleta.locacao}, Quilometragem: {bicicleta.quilometragem}, identificador: {bicicleta.identificador}"
+                )
+        bike = input("Digite o identificador da bicicleta que deseja desalugar: ")
+        for bicicleta in dic_alugadas:
+            if bike == bicicleta.identificador:
+                dias = int(input("Insira a quantidade de dias que \na bike ficou alugada: "))
+                km_rodados = int(input("Insira a quilometragem rodada: "))
+                if bicicleta.identificador == "Volt01" or bicicleta.identificador == "Volt02":
+                    if km_rodados > 1000:
+                        multa_km = (km_rodados - 1000) * 1.5
+                    elif dias > 15:
+                        multa_dias = (dias - 15) * 5
+                    valor_total = multa_km + multa_dias + 300
+                elif bicicleta.identificador == "Nature01" or bicicleta.identificador == "Nature02":
+                    if km_rodados > 500:
+                        multa_km = (km_rodados - 500) * 1
+                    elif dias > 10:
+                        multa_dias = (dias - 10) * 5
+                    valor_total = multa_km + multa_dias + 200
+                elif bicicleta.identificador == "Urban01":
+                    if km_rodados > 200:
+                        multa_km = (km_rodados - 200) * 0.75
+                    elif dias > 7:
+                        multa_dias = (dias - 7) * 0.75
+                    valor_total = multa_km + multa_dias + 100
+
+                print(f"Bicicleta {bike} desalugada com sucesso!")
+                print("==============================")
+                print(f"Valor total: {valor_total}")
+                dic_livres.append(bicicleta)
+                dic_livres.remove(bicicleta)
                 break
             else:
-                print("Não foi possível encontrar a sua geladeira! ")       
-
-    
-    print('='*70)        
-    menu = int(input("Escolha o número para a respectiva questão:\n[3] Questão 3\n[4] Questão 4\n[5] Questão 5\n--> "))
-    print('='*70)
-    
-    if menu == 3:
-        questao3()
-    elif menu == 4:
-        questao4()
-    elif menu == 5:
-        questao5()
-    else:
-        print("Opção inválida!")
-
-    saida = input("Deseja sair do programa? (s/n) ").lower()
-    if saida == 's':
-        break
+                print("Bicicleta não encontrada!")
+                break
