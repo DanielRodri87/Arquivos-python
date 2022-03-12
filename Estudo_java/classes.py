@@ -1,20 +1,16 @@
-class Maiusculo:
-    def __init__(self, texto):
-        self.texto = texto
+class Caneta:
+    def __init__(self, cor, marca, escrevendo = False):
+        self.cor = cor
+        self.marca = marca
+        self.escrevendo = escrevendo
 
-    def trocar_maiusculo(self):
-        for i in range(len(self.texto)):
-            if self.texto[i].isupper():
-                self.texto = self.texto[:i] + self.texto[i].lower() + self.texto[i+1:]
-
-            else:
-                self.texto = self.texto[:i] + self.texto[i].upper() + self.texto[i+1:]
-
-    def __str__(self):
-        return self.texto
+    def escrever(self):
+        if self.escrevendo == False:
+            print(f'A caneta {self.cor}, da marca {self.marca} está escrevendo')
+            self.escrevendo = True
+        else:
+            print('A caneta já está escrevendo')
 
 
-texto = input('Digite um texto: ')
-maiusculo = Maiusculo(texto)
-maiusculo.trocar_maiusculo()
-print(maiusculo)
+bic = Caneta('azul', 'bic', True)
+bic.escrever()
