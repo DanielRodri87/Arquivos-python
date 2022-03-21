@@ -1,12 +1,16 @@
-
-.site{
-    border: black;
-    margin-left: auto;
-    margin-right: auto;
-    height: 6em;
-    width: 50em
+/* centralizar */
+body {
+  margin: 0 auto;
+  text-align: center;
 }
-
-.tudo{
-    background-color: darkgray;
+/* fim centralizar */
+/* fonte */
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+}
+/* fim fonte */
+/* borda */
+body {
+  border: 1px solid #000;
 }
