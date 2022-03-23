@@ -15,7 +15,7 @@ class Front:
                         sg.Input(size=(50,1), key='nome')
                     ],
                     [
-                        sg.Button('Sortear', key='sortear'), sg.Button('Sair', key='sair'), sg.Button('Limpar', key='limpar')
+                        sg.Button('Sortear', key='sortear'), sg.Button('Sair', key='sair'), sg.Button('Limpar Tudo', key='limpar'), sg.Button('Limpar Resultado', key='limparr')
                     ]
                 ]
             )],
@@ -28,7 +28,7 @@ class Front:
         nomes = nome.split(',')
         sorteado = random.choice(nomes)
         return sorteado
-
+        
     def main():
         layout = Front.tela()
         janela = sg.Window('Sorteio', layout)
@@ -46,6 +46,9 @@ class Front:
             if event == 'limpar':
                 janela['saida'].update('')
                 janela['nome'].update('')
+
+            if event == 'limparr':
+                janela['saida'].update('')
         janela.close()
 
 if __name__ == '__main__':
