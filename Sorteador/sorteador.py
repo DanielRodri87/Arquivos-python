@@ -1,4 +1,4 @@
-import PySimpleGUI as sg
+import PySimpleGUI as sg # Instalar: pip install PySimpleGUI
 import random
 from numpy import size
 
