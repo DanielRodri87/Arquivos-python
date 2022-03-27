@@ -3,5 +3,3 @@ class Pessoa:
         self.nome = nome
         self.cpf = cpf
 
-    def __str__(self):
-        return f'{self.nome} - {self.cpf}'

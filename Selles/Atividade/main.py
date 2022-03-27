@@ -1,20 +1,51 @@
 from pessoa import Pessoa
 
-lista_Pessoas = []
 
-while True:
-    print('[1] Cadastrar Pessoa\n[2] Listar Pessoas\n[3] Sair\n--> ', end='')
-    opcao = int(input())
-    if opcao == 1:
-        print('Digite o nome: ', end='')
-        nome = input()
-        print('Digite o CPF: ', end='')
-        cpf = input()
-        lista_Pessoas.append(Pessoa(nome, cpf))
+class MyApp:
+    def __init__(self):
+        self.list_person = []
 
-    elif opcao == 2:
-        for pessoa in lista_Pessoas:
-            print(pessoa)
+        MyApp.__run(self)
 
-    elif opcao == 3:
-        break
+    def add_person(self, person):
+        self.list_person.append(person)
+    
+    def find_person(self, person):
+        for p in self.list_person:
+            if p.CPF == person.CPF:
+                return p
+        return None
+    
+    def __run(self):
+        while True:
+            print('1 - Adicionar Pessoa')
+            print('2 - Buscar Pessoa')
+            print('3 - Sair')
+            print('\n')
+            option = int(input('Digite a opção desejada: '))
+
+            if option == 1:
+                nome = input('Digite o nome da pessoa: ')
+                CPF = input('Digite o CPF da pessoa: ')
+                person = Pessoa(nome, CPF)
+                self.add_person(person)
+            elif option == 2:
+                CPF = input('Digite o CPF da pessoa: ')
+                person = Pessoa(nome, CPF)
+                person_found = self.find_person(person)
+                if person_found:
+                    print('Pessoa encontrada:')
+                    print(person_found.nome)
+                    print(person_found.CPF)
+                    print("===================================")
+                else:
+                    print('Pessoa não encontrada')
+            elif option == 3:
+                break
+            else:
+                print('Opção inválida')
+
+if __name__ == '__main__':
+    app = MyApp()
+
+print('oi')
