@@ -1,42 +1,76 @@
-.card{
-    margin: 0 auto;
-    width: 450px;
-    height: 700px;
-    background-color: green;
-    color: white;
-    text-align: center;
-    border-radius: 10%;
-    box-shadow: 0 0 10px black;
-    padding: 10px;    
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-#face{
-    border-radius: 50%;
-}
-
-h1{
-    font-size: 30px;
-    text-align: center;
-}
-
-p{
-    font-size: 20px;
-    text-align: center;
-    margin-top: 100px;
-}
-#quadrado{
-    z-index: -1;
-    position: absolute;
-
-}
-
-.icons{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    text-align: center;
-    margin-bottom: 280px;
+.central{
     width: 100%;
-    height: 50px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#formageometrica {
+    background-color: #42882E;
+    height: 235px;
+    clip-path: polygon(0 40%, 0 0, 100% 0, 100% 40%, 50% 90%);
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 10px 10px 0 0;
+}
+
+.card {
+   background-color: #2D5B18; 
+   width: 365px;
+   color: #fff;
+   text-align: center;
+   border-radius: 10px;
+   padding: 45px 35px;
+   font-family: 'Roboto', sans-serif;
+   position: relative;
+}
+
+.card img {
+    clip-path: circle();
+}
+
+.card h1 {
+    font-size: 28px;
+    margin: 20px 0;
+}
+.card p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    color: #CABDBD;
+}
+
+.card ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+.card ul a span {
+    font-size: 45px;
+    color: black;
+}
+
+.card ul a span:hover {
+    color: #fff;
+    transition: 0.3s;
+}
+
+img{
+    border-radius: 50%;
+    width: 150px;
+    height: auto;
 }
