@@ -1,0 +1,42 @@
+.card{
+    margin: 0 auto;
+    width: 450px;
+    height: 700px;
+    background-color: green;
+    color: white;
+    text-align: center;
+    border-radius: 10%;
+    box-shadow: 0 0 10px black;
+    padding: 10px;    
+}
+
+#face{
+    border-radius: 50%;
+}
+
+h1{
+    font-size: 30px;
+    text-align: center;
+}
+
+p{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 100px;
+}
+#quadrado{
+    z-index: -1;
+    position: absolute;
+
+}
+
+.icons{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: center;
+    margin-bottom: 280px;
+    width: 100%;
+    height: 50px;
+}
