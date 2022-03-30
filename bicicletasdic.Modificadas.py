@@ -1,43 +1,62 @@
-dic_livres = {}
-dic_alugadas = {}
+class Contato:
+    def __init__(self, nome, email, numero):
+        self.nome = nome
+        self.email = email
+        self.numero = numero
 
-class Bicicletas():
-    def __init__(self, locacao, identificador):
-        self._tipo = locacao
-        self._chave = identificador
+    def _str_(self):
+        return f'Nome: {self.nome}, Email: {self.email}, Numero: {self.numero}'
 
-    @property  
-    def tipo(self):
-        return self._tipo
 
-    @tipo.setter  
-    def tipo(self, tipo):
-       self._tipo = tipo
+def main():
+    agenda = {}
+    while True:
+        print('1 - Novo contato')
+        print('2 - Alterar contato')
+        print('3 - Remover contato')
+        print('4 - Buscar contato')
+        print('5 - Sair')
+        opcao = int(input('Digite a opção desejada: '))
 
-    @property  
-    def chave(self):
-        return self._chave
+        if opcao == 1:
+            chave = int(input('Digite a chave: '))
+            nome = input('Digite o nome: ')
+            email = input('Digite o email: ')
+            numero = input('Digite o numero: ')
+            agenda[chave] = Contato(nome, email, numero)
+        
+        # Alterar contato
+        elif opcao == 2:
+            chave = int(input('Digite a chave: '))
+            if chave in agenda: # -> Se a chave existir, edite-a
+                nome = input('Digite o nome: ')
+                email = input('Digite o email: ')
+                numero = input('Digite o numero: ')
+                agenda[chave] = Contato(nome, email, numero) # -> Atualiza o contato
 
-    @chave.setter  
-    def chave(self, chave):
-        self._tipo = chave
-
-    def alugar(self):
-        dic_alugadas[self.chave] = dic_livres[self.chave]
-        del dic_livres[self.chave]
-
-opicao = 2
-if opicao == 2:
-    print("============= Alugar bicicletas =============")
-    identificador = str(input("Insira a unidade que deseja alugar: "))
-    for chave, valor in dic_livres.items():
-        for chave, valor in dic_livres.items():
-            if valor.identificador == chave:
-                dic_alugadas[chave] = valor
-                print('foi')
-                del dic_livres[chave]
             else:
-                print('não foi')
+                print('Chave não encontrada')
 
-print(dic_alugadas)
+        # Remover contato
+        elif opcao == 3:
+            chave = int(input('Digite a chave: '))
+            if chave in agenda:
+                del agenda[chave]
+            else:
+                print('Chave não encontrada')
 
+        # Buscar contato
+        elif opcao == 4:
+            chave = int(input('Digite a chave: '))
+            if chave in agenda:
+                # informações
+                print(f'Nome: {agenda[chave].nome}, Email: {agenda[chave].email}, Numero: {agenda[chave].numero}')
+            else:
+                print('Chave não encontrada')
+
+        # Sair
+        elif opcao == 5:
+            break
+    
+if __name__ == '__main__':
+    main()
