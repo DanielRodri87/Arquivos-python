@@ -1,8 +1,6 @@
 from contato import Contato
 dict_contatos = {}
 while True:
-#elcimara e georgia
-
     print(" 1 adicionar contato")
     print(" 2 remover contato")
     print(" 3 alterar contato")
