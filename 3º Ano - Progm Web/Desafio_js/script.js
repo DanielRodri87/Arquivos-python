@@ -19,20 +19,19 @@ function buscarFilme() {
             document.getElementById("diretor").innerHTML = data.Director;
             document.getElementById("escritor").innerHTML = data.Writer;
             document.getElementById("nota").innerHTML = data.imdbRating;
-            document.getElementById("poster").src = data.Poster;
+            document.getElementById("banner").style.backgroundImage = `url(${data.Poster})`;
         }
         )
 }
 
 function substituirValores() {
-    document.getElementById("titulo").innerHTML = "Título";
+    document.getElementById("titulo").innerHTML = "Titulo";
     document.getElementById("sinopse").innerHTML = "Sinopse";
     document.getElementById("tipo").innerHTML = "Tipo";
     document.getElementById("ano").innerHTML = "Ano";
     document.getElementById("diretor").innerHTML = "Diretor";
     document.getElementById("escritor").innerHTML = "Escritor";
     document.getElementById("nota").innerHTML = "Nota";
-    document.getElementById("poster").src = "https://via.placeholder.com/300x450";
+    document.getElementById("banner").style.backgroundImage = "url(https://www.pngitem.com/pimgs/m/9-948892_no-image-available-icon-png-transparent-png.png)";
 }
-
 
