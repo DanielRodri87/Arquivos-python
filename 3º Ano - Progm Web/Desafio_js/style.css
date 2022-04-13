@@ -20,7 +20,7 @@ main {
 
 .poster {
     width: 50%;
-    background: url(filme.png) no-repeat center;
+    background-image: url('https://image.tmdb.org/t/p/w500/kqjL17yufvn9OVLyXYpvtyrFfak.jpg');
     background-size: cover;
     position: relative;
 }

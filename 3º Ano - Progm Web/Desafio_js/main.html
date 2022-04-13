@@ -10,30 +10,25 @@
 </head>
 <body>
     <main>
-        <div class="poster">
-            <div class="imdbrating"> 
+        <div class="poster" id="poster">
+            <div class="imdbrating" id="poster"> 
                 <span class="icon"><i class="fa-solid fa-star"></i></span>
-                <span class="score">3.3</span> 
+                <span class="score" id="nota">3.3</span> 
             </div>
-        </div>
-
-        <div class="pesquisa">
-
         </div>
 
         <div class="info">
             
-            <input type="text">
+            <input id="busca" type="text" placeholder="Digite o nome do filme">
 
-            <button type="Pesquisar">Pesquisar</button>
-            <h1 class="title">WHITHOUT REMORSE</h1>
-            <p><span class="text-blue">2021</span><span class="filmeType">Action, Thriller, War</span> <span class="text-blue">129 min</span></p>
-            <p>An elite Navy SEAL, goes on a path to avenge his wife's murder only to find himself inside of a larger conspiracy.</p>
-            <p>
-                <strong>Escrito por:</strong> Taylor Sheridan, Will Staples, Tom Clancy 
-            </p>
-            <p>
-                <strong>Dirigido por:</strong> Stefano Sollima
+            <button type="Pesquisar" value="PESQUISAR" onclick="buscarFilme()">Pesquisar</button>
+            <h1 class="title" id="titulo">WHITHOUT REMORSE</h1>
+            <p><span class="text-blue" id="ano">2021</span><span class="filmeType" id="tipo">Action, Thriller, War</span> <span class="text-blue">129 min</span></p>
+            <p id="sinopse">An elite Navy SEAL, goes on a path to avenge his wife's murder only to find himself inside of a larger conspiracy.</p>
+            <p id="escritor">
+                <strong>Escrito por:</strong>Taylor Sheridan, Will Staples, Tom Clancy</p>
+            <p id="diretor">
+                <strong>Dirigido por:</strong>diretor
             </p>
         </div>
     </main>
