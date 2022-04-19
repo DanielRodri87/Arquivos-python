@@ -25,14 +25,7 @@ function buscarFilme() {
         )
 }
 
-function substituirValores() {
-    document.getElementById("titulo").innerHTML = "Titulo";
-    document.getElementById("sinopse").innerHTML = "Sinopse";
-    document.getElementById("duracao").innerHTML = "Duração";
-    document.getElementById("tipo").innerHTML = "Tipo";
-    document.getElementById("ano").innerHTML = "Ano";
-    document.getElementById("nota").innerHTML = "Nota";
-    document.getElementById("banner").style.backgroundImage = "url(https://www.pngitem.com/pimgs/m/9-948892_no-image-available-icon-png-transparent-png.png)";
-    document.getElementById("diretor").innerHTML = "diretor";
-    document.getElementById("escritor").innerHTML = "escritor";
+// barra de carregamento
+function carregando() {
+    document.getElementById("titulo").style.display = "block";
 }

@@ -105,3 +105,18 @@ button{
     border-radius: 10px;
     color: #CAB9B9;
 }
+
+button:hover{ 
+    transform: scale(1.1);
+    background: aqua;
+    color: white;
+    transition: all 1.5s;
+
+}
+
+input:hover{ 
+    transform: scale(1.1);
+    color: white;
+    transition: all 1.5s;
+
+}
