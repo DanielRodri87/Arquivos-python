@@ -1,6 +1,3 @@
-var user_pesquisa = document.getElementById("pesquisa");
-var api_pesquisa = `http://www.omdbapi.com/?t=${user_pesquisa}&apikey=790af7bc`;    // API do OMDB
-
 function buscarFilme() {
     const filme = document.getElementById("busca").value;
     const api_pesquisa = `http://www.omdbapi.com/?t=${filme}&apikey=790af7bc`;
@@ -11,6 +8,21 @@ function buscarFilme() {
         }
         )
         .then(function (data) {
+            if(data.Response == 'False'){
+                console.log(data);
+                document.getElementById("descricao").innerHTML = "Filme não encontrado! Digite novamente";
+                document.getElementById("titulo").innerHTML = "";
+                document.getElementById("sinopse").innerHTML = "";
+                document.getElementById("duracao").innerHTML = "";
+                document.getElementById("tipo").innerHTML = "";
+                document.getElementById("ano").innerHTML = "";
+                document.getElementById("diretor").innerHTML = "";
+                document.getElementById("escritor").innerHTML = "";
+                document.getElementById("nota").innerHTML = "";
+                document.getElementById("banner").style.backgroundImage = `url(choro.png)`;
+
+
+        }   else{
             console.log(data);
             document.getElementById("titulo").innerHTML = data.Title;
             document.getElementById("sinopse").innerHTML = data.Plot;
@@ -21,11 +33,6 @@ function buscarFilme() {
             document.getElementById("escritor").innerHTML = "<strong>Escrito por:</strong>"+` ${data.Writer}`;
             document.getElementById("nota").innerHTML = data.imdbRating;
             document.getElementById("banner").style.backgroundImage = `url(${data.Poster})`;
-        }
+        }}
         )
-}
-
-// barra de carregamento
-function carregando() {
-    document.getElementById("titulo").style.display = "block";
 }
