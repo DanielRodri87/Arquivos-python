@@ -23,16 +23,16 @@ function buscarFilme() {
 
 
         }   else{
-            console.log(data);
-            document.getElementById("titulo").innerHTML = data.Title;
-            document.getElementById("sinopse").innerHTML = data.Plot;
-            document.getElementById("duracao").innerHTML = data.Runtime;
-            document.getElementById("tipo").innerHTML = data.Type;
-            document.getElementById("ano").innerHTML = data.Year;
-            document.getElementById("diretor").innerHTML = "<strong>Dirigido por:</strong>"+` ${data.Director}`;
-            document.getElementById("escritor").innerHTML = "<strong>Escrito por:</strong>"+` ${data.Writer}`;
-            document.getElementById("nota").innerHTML = data.imdbRating;
-            document.getElementById("banner").style.backgroundImage = `url(${data.Poster})`;
+                console.log(data);
+                document.getElementById("titulo").innerHTML = data.Title;
+                document.getElementById("sinopse").innerHTML = data.Plot;
+                document.getElementById("duracao").innerHTML = data.Runtime;
+                document.getElementById("tipo").innerHTML = data.Type;
+                document.getElementById("ano").innerHTML = data.Year;
+                document.getElementById("diretor").innerHTML = "<strong>Dirigido por:</strong>"+` ${data.Director}`;
+                document.getElementById("escritor").innerHTML = "<strong>Escrito por:</strong>"+` ${data.Writer}`;
+                document.getElementById("nota").innerHTML = data.imdbRating;
+                document.getElementById("banner").style.backgroundImage = `url(${data.Poster})`;
         }}
         )
 }
