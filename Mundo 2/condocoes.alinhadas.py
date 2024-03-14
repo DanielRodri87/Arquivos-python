@@ -55,23 +55,23 @@
 
 #########################################################################################################################################3
 
-#print('''confederação nacional de natação precisa de um programa que leia o ano de nascimento de um atleta e mostre sua\ncategoria, de acordo com a sua idade:'
-#      Até 9 anos: MIRIM'
-#      Até 14 anos: INFANTIL'
-#      Até 19 anos: JUNIOR'
-#      Até 20 anos: SÊNIOR'
-#      Acima: MASTER''')
-#idade = int(input('quantos anos você tem? '))
-#if idade <= 9:
-#    print('A sua liga é a mirim.')
-#elif idade > 9 and idade <= 14:
-#    print('A sua liga é a infantil.')                                                          <----- Desafio 41 Ok
-#elif idade > 14 and idade <=19:
-#    print('A sua liga é a junior.')
-#elif idade > 19:
-#    print('A sua liga é a master.')
-#elif idade <= 0 or idade >= 120:
-#    print('Não é possível competir com essa idade.')
+print('''confederação nacional de natação precisa de um programa que leia o ano de nascimento de um atleta e mostre sua\ncategoria, de acordo com a sua idade:'
+     Até 9 anos: MIRIM'
+     Até 14 anos: INFANTIL'
+     Até 19 anos: JUNIOR'
+     Até 20 anos: SÊNIOR'
+     Acima: MASTER''')
+idade = int(input('quantos anos você tem? '))
+if idade <= 9:
+   print('A sua liga é a mirim.')
+elif idade > 9 and idade <= 14:
+   print('A sua liga é a infantil.')                                                       #   <----- Desafio 41 Ok
+elif idade > 14 and idade <=19:
+   print('A sua liga é a junior.')
+elif idade > 19:
+   print('A sua liga é a master.')
+elif idade <= 0 or idade >= 120:
+   print('Não é possível competir com essa idade.')
 
 ##################################################################################################################################################
 
